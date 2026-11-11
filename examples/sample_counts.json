@@ -1,0 +1,168 @@
+{
+  "description": "Synthetic seed-2 route counts; illustrative coefficients, not measured hardware calibration",
+  "parameter_notes": {
+    "planner.tau": "0.5 ms is a starting threshold. Tune it to measured timing noise and the desired minimum benefit.",
+    "shadow_cost.attention_ms": "7.636 ms is a starting overlap window. Replace it with the usable attention overlap window measured for the actual workload.",
+    "time_model": "Fit compute and communication coefficients using actual hardware/workload measurements; derive row_bytes from hidden size and payload dtype.",
+    "shadow_cost": "The coefficients are illustrative, not hardware calibration. Refit them for the actual expert payload size and communication links.",
+    "numa": "Replace the example rank domains and bandwidth ratio with the actual topology and measured link performance."
+  },
+  "counts_mb0_by_rank": [
+    [
+      1957,
+      1767,
+      1941,
+      1738,
+      115,
+      187,
+      173,
+      739,
+      1711,
+      346,
+      1507,
+      1656
+    ],
+    [
+      1371,
+      1748,
+      631,
+      515,
+      1240,
+      434,
+      1242,
+      73,
+      1190,
+      1395,
+      324,
+      882
+    ],
+    [
+      1307,
+      805,
+      1645,
+      1480,
+      1761,
+      1042,
+      1944,
+      761,
+      1114,
+      1916,
+      911,
+      1028
+    ],
+    [
+      549,
+      1845,
+      73,
+      1783,
+      56,
+      745,
+      952,
+      1908,
+      652,
+      1859,
+      778,
+      867
+    ]
+  ],
+  "counts_mb1_by_rank": [
+    [
+      1826,
+      1810,
+      1076,
+      336,
+      1147,
+      363,
+      483,
+      472,
+      48,
+      361,
+      665,
+      355
+    ],
+    [
+      279,
+      1044,
+      1044,
+      736,
+      1052,
+      1381,
+      1146,
+      372,
+      1830,
+      912,
+      1631,
+      849
+    ],
+    [
+      1504,
+      1075,
+      1856,
+      1860,
+      1562,
+      745,
+      1617,
+      1215,
+      724,
+      741,
+      1759,
+      1969
+    ],
+    [
+      912,
+      330,
+      1955,
+      1544,
+      818,
+      1464,
+      1512,
+      944,
+      1341,
+      1086,
+      511,
+      1003
+    ]
+  ],
+  "owner_of_expert": [
+    0,
+    0,
+    0,
+    1,
+    1,
+    1,
+    2,
+    2,
+    2,
+    3,
+    3,
+    3
+  ],
+  "time_model": {
+    "alpha": 0.2034,
+    "beta": 0.0889,
+    "gamma": 0.8,
+    "delta": 0.046500382,
+    "row_bytes": 4096
+  },
+  "shadow_cost": {
+    "alpha_ms": 0.0,
+    "per_replica_ms": 0.05,
+    "attention_ms": 7.636
+  },
+  "numa": {
+    "rank_domains": [
+      0,
+      0,
+      1,
+      1
+    ],
+    "inter_bandwidth_ratio": 0.79
+  },
+  "planner": {
+    "M": 2,
+    "topL": 3,
+    "tau": 0.5,
+    "exact_topk": 3,
+    "local_swap_rounds": 2
+  }
+}

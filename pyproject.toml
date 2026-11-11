@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "shadow-expert-planner"
+version = "0.1.0"
+description = "Shadow-expert replica selection with topology-independent and NUMA-aware time models"
+readme = "README.md"
+license = {text = "Apache-2.0"}
+classifiers = ["License :: OSI Approved :: Apache Software License"]
+requires-python = ">=3.9"
+dependencies = ["torch>=2.0"]
+keywords = ["mixture-of-experts", "expert-parallelism", "NUMA", "replica-selection"]
+
+[project.scripts]
+shadow-expert-plan = "shadow_planner.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["shadow_planner*"]
